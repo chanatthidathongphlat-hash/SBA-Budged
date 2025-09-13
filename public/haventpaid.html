@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>นักศึกษาที่ยังไม่ชำระเงิน</title>
+<script src="js/main.js"></script>
+</head>
+<body>
+<h2>นักศึกษาที่ยังไม่ชำระเงิน</h2>
+<div id="unpaidList"></div>
+
+<script>
+async function loadUnpaid() {
+    const all = await getStudents();
+    const paid = await getPaid();
+    const paidIds = paid.map(s => s.id);
+    const unpaid = all.filter(id => !paidIds.includes(id));
+    renderStudentList('unpaidList', unpaid.map(id => ({id})));
+}
+loadUnpaid();
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>นักศึกษาที่ยังไม่ชำระเงิน</title>
+<script src="js/main.js"></script>
+</head>
+<body>
+<h2>นักศึกษาที่ยังไม่ชำระเงิน</h2>
+<div id="unpaidList"></div>
+
+<script>
+async function loadUnpaid() {
+    const all = await getStudents();
+    const paid = await getPaid();
+    const paidIds = paid.map(s => s.id);
+    const unpaid = all.filter(id => !paidIds.includes(id));
+    renderStudentList('unpaidList', unpaid.map(id => ({id})));
+}
+loadUnpaid();
+</script>
+</body>
+</html>

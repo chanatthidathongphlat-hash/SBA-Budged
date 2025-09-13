@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>รหัสนักศึกษาทั้งหมด</title>
+<style>
+body { font-family: Tahoma,sans-serif; margin: 20px; }
+h1 { text-align: center; margin-bottom: 20px; }
+ol { max-width: 400px; margin: auto; }
+</style>
+</head>
+<body>
+<h1>รหัสนักศึกษาทั้งหมด</h1>
+<ol id="studentList"></ol>
+<div style="text-align:center; margin-top:20px;">
+  <a href="index.html">กลับสู่หน้าหลัก</a>
+</div>
+<script>
+function loadAllStudents() {
+  fetch('/students')
+    .then(res => res.json())
+    .then(students => {
+      const list = document.getElementById('studentList');
+      if (students.length === 0) {
+        list.innerHTML = "<p>ยังไม่มีรหัสนักศึกษา</p>";
+      } else {
+        list.innerHTML = students.map(s => `<li>${s}</li>`).join('');
+      }
+    });
+}
+loadAllStudents();
+</script>
+</body>
+</html>
