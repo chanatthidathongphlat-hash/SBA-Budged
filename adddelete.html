@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>เพิ่ม/ลบ รหัสนักศึกษา</title>
+<script src="js/main.js"></script>
+</head>
+<body>
+<h2>จัดการรหัสนักศึกษา</h2>
+<input type="text" id="studentId" placeholder="รหัสนักศึกษา 8 หลัก">
+<button id="addBtn">เพิ่ม</button>
+<button id="removeBtn">ลบ</button>
+<div id="studentList"></div>
+
+<script>
+async function showAll() {
+    const students = await getStudents();
+    renderStudentList('studentList', students);
+}
+
+document.getElementById('addBtn').addEventListener('click', async () => {
+    const id = document.getElementById('studentId').value.trim();
+    const res = await addStudent(id);
+    alert(res.message);
+    showAll();
+});
+
+document.getElementById('removeBtn').addEventListener('click', async () => {
+    const id = document.getElementById('studentId').value.trim();
+    const res = await removeStudent(id);
+    alert(res.message);
+    showAll();
+});
+
+showAll();
+</script>
+</body>
+</html>

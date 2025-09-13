@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบชำระเงินนักศึกษา</title>
+  <style>
+html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Tahoma, sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ส่วนหัว */
+    header {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 40px 0 20px 0;
+    }
+
+    /* ส่วนปุ่ม */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* เริ่มจากด้านบนของพื้นที่ main */
+      gap: 30px;
+    }
+
+    .menu-button {
+      background-color: #1c2c53;
+      color: white;
+      padding: 12px 24px;
+      width: 280px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .menu-button:hover {
+      background-color: #344574;
+    }
+
+    /* แถบล่าง */
+    footer {
+      background-color: #2b3b66;
+      height: 40px;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    ระบบชำระเงินนักศึกษา
+  </header>
+
+  <main>
+   <a href="payment.html">
+  <button class="menu-button">คลิกเพื่อชำระเงิน</button>
+</a>
+
+   <a href="paid.html">
+    <button class="menu-button">รหัสนักศึกษาผู้ที่ชำระเงินแล้ว</button>
+</a>
+    
+   <a href="haventpaid.html">
+    <button class="menu-button">รหัสนักศึกษาผู้ที่ยังไม่ชำระเงิน</button>
+</a> 
+
+  <a href="adddelete.html">
+    <button class="menu-button">เพิ่ม/ลบ รหัสนักศึกษา</button>
+</a>
+
+  <a href="allnum.html">  
+    <button class="menu-button">ดูรหัสนักศึกษาทั้งหมด</button>
+</a>
+  </main>
+
+  <footer></footer>
+
+</body>
+</html>

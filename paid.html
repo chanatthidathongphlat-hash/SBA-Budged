@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>นักศึกษาที่ชำระเงินแล้ว</title>
+<script src="js/main.js"></script>
+</head>
+<body>
+<h2>นักศึกษาที่ชำระเงินแล้ว</h2>
+<input type="text" id="searchBox" placeholder="ค้นหา">
+<div id="paidList"></div>
+
+<script>
+async function loadPaid() {
+    const paid = await getPaid();
+    renderPaidList('paidList', paid);
+}
+
+document.getElementById('searchBox').addEventListener('input', async e => {
+    const paid = await getPaid();
+    renderPaidList('paidList', paid, e.target.value);
+});
+
+loadPaid();
+</script>
+</body>
+</html>
